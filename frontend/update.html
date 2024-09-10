@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knjige</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./book.html"><i class="fa-solid fa-sheet-plastic"></i> Knjižara</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./book.html">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./do.html">Dodaj knjigu</a>
+                        </li>
+                        
+                    </ul>
+                    <div class="d-flex">
+                        <input class="form-control me-2" type="search" id="search">
+                        <button class="btn btn-outline-success" type="button" id="search-btn">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./book.html">Početna</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page" id="breadcrumb"></li>
+            </ol>
+          </nav>
+        <h1 class="h3">Izmeni knjigu</h1>
+        <div>
+                <div class="mb-3">
+                  <label for="id" class="form-label">Knjiga ID</label>
+                  <input type="number" class="form-control" id="id" disabled>
+                  </div>
+                <div class="mb-3">
+                  <label for="title" class="form-label">Naslov</label>
+                  <input type="text" class="form-control" id="title">
+                </div>
+                <div class="mb-3">
+                  <label for="genre" class="form-label">Žanr</label>
+                  <input type="text" class="form-control" id="genre">
+                </div>
+                <div class="mb-3">
+                    <label for="isbn" class="form-label">ISBN</label>
+                    <input type="text" class="form-control" id="isbn">
+                  </div>
+                  <div class="mb-3">
+                    <label for="created" class="form-label">Datum unosa</label>
+                    <input type="text" class="form-control" id="created" disabled>
+                  </div>
+                  <div class="mb-3">
+                    <label for="updated" class="form-label">Datum izmene</label>
+                    <input type="text" class="form-control" id="updated" disabled>
+                  </div>
+                  <button type="submit" class="btn btn-success" id="save">
+                    <i class="fa-solid fa-floppy-disk" ></i> Sačuvaj
+                  </button>
+             </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="./js/find.js"></script>
+<script src="./js/update.js"></script>
+</body>
+
+</html>
