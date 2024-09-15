@@ -7,46 +7,39 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Entity(name = "book")
+@Entity(name = "publisher")
 @NoArgsConstructor
 @Getter
 @Setter
-public class Book {
+
+public class Publisher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "book_id")
+    @Column(name = "publisher_id")
     private Integer id;
 
     @Column(nullable = false, unique = true)
-    private String title;
+    private String name;
 
     @Column(nullable = false)
-    private String genre;
+    private String address;
 
     @Column(nullable = false)
-    private String isbn;
-
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "publisher_id", nullable = false)
-    private Publisher publisher;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "book_author",
-               joinColumns = @JoinColumn(name = "book_id"),
-               inverseJoinColumns = @JoinColumn(name = "author_id")
-    )
-    List<Author> authors;
+    private String contact;
 
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
     private LocalDateTime updatedAt;
 
-    @JsonIgnore // kako niko ne bi znao da deleted postoji uopste kao opcija
+    @JsonIgnore
     private LocalDateTime deletedAt;
+
+
+
+
 
 
 }

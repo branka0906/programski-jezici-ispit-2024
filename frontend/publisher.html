@@ -12,21 +12,25 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-image: url('books.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            color: white;
+        margin: 0;
+        padding: 0;
+        background-image: url('books.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        color: white;
         }
 
-            .container {
-            padding-top: 20px;
+        .navbar {
+        background-color: rgba(0, 0, 0, 0.9);
         }
+
+        .container {
+        padding-top: 20px;
+        }
+
     </style>
-
 </head>
 
 <body>
@@ -42,13 +46,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./book.html">
-                            <i class="fa-solid fa-house"></i> Početna</a>
+                        <a class="nav-link"  href="./book.html"> Početna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./publisher.html"> Izdavači knjiga</a>
+                        <a class="nav-link active" href="./publisher.html" aria-current="page">Izdavači knjiga</a>
                     </li>
-                </ul>
+                    </ul>
                 <div class="d-flex">
                     <input class="form-control me-2" type="search" id="search" placeholder="Naziv knjige" style="background-color: rgba(0, 0, 0, 0.5)">
                     <button class="btn btn-outline-success" type="button" id="search-btn">
@@ -58,42 +61,34 @@
             </div>
         </div>
     </nav>
-
-    <h1 class="h3">
-        <span id="search-title"> Lista knjiga </span>
-        <a href="do.html" class="btn btn-sm btn-success">
-            <i class="fa-solid fa-plus"></i> Dodaj knjigu </a>
-    </h1>
-
+    <h1 class="h3"> Lista izdavača <a href="do-publisher.html" class="btn btn-sm btn-success">
+        <i class="fa-solid fa-plus"></i> Dodaj izdavača </a></h1>
     <table class="table">
         <thead>
         <tr>
-
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">#</th>
-            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Naslov</th>
-            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Žanr</th>
-            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">ISBN</th>
-            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Izdavači</th>
+            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Naziv</th>
+            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Adresa</th>
+            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Kontakt</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Datum unosa</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Datum izmene</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Opcije</th>
         </tr>
         </thead>
-        <tbody id="table"></tbody>
+        <tbody id="publisher-table"></tbody>
     </table>
 </div>
-
-<template id="book">
+<template id="publisher">
     <tr>
         <th scope="row" class="id" style="background-color: rgba(0, 0, 0, 0.5)"></th>
-        <td class="title" style="background-color: rgba(0, 0, 0, 0.5)"></td>
-        <td class="genre" style="background-color: rgba(0, 0, 0, 0.5)"></td>
-        <td class="isbn" style="background-color: rgba(0, 0, 0, 0.5)"></td>
-        <td class="publisher" style="background-color: rgba(0, 0, 0, 0.5)"></td>
+        <td class="name" style="background-color: rgba(0, 0, 0, 0.5)"></td>
+        <td class="address" style="background-color: rgba(0, 0, 0, 0.5)"></td>
+        <td class="contact" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td class="created" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td class="updated" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td>
             <div class="btn-group">
+
                 <a href="#" class="btn btn-sm btn-primary edit">
                     <i class="fa-solid fa-file-pen"></i> Izmeni
                 </a>
@@ -103,6 +98,7 @@
                 </button>
             </div>
         </td>
+
     </tr>
 </template>
 
@@ -110,6 +106,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="./js/find.js"></script>
-<script src="./js/book.js"></script>
+<script src="./js/publisher.js"></script>
 </body>
+
 </html>

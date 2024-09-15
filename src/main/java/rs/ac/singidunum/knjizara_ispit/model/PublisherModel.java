@@ -1,5 +1,4 @@
 package rs.ac.singidunum.knjizara_ispit.model;
-//Da bismo ucitali podatke
 
 
 import lombok.Getter;
@@ -9,10 +8,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BookModel {
+public class PublisherModel {
 
-    private String title;
-    private String genre;
-    private String isbn;
-    private Integer publisherId;
+    private String name;
+    private String address;
+    private String contact;
 }

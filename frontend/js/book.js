@@ -26,6 +26,7 @@ fetch(`http://localhost:8000/api/book${url}`)
                 copy.querySelector('.title').innerText = book.title;
                 copy.querySelector('.genre').innerText = book.genre;
                 copy.querySelector('.isbn').innerText = book.isbn;
+                copy.querySelector('.publisher').innerText = book.publisher.name;
                 copy.querySelector('.created').innerText = formatDate(book.createdAt)
                 copy.querySelector('.updated').innerText = formatDate(book.updatedAt)
                 copy.querySelector('.edit').href = `./update.html?id=${book.id}`

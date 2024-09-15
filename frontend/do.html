@@ -10,11 +10,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    body {
+    margin: 0;
+    padding: 0;
+    background-image: url('books.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+    }
+
+    .navbar {
+    background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .container {
+    padding-top: 20px;
+    }
+
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar  navbar-expand-lg rounded" style="background-color: rgba(0, 0, 0, 0.5)">
             <div class="container-fluid">
                 <a class="navbar-brand" href="./book.html">
                     <i class="fa-solid fa-sheet-plastic"></i> Knjižara</a>
@@ -29,11 +50,11 @@
                             <a class="nav-link" href="./book.html">Početna</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./do.html">Nova knjiga</a>
+                            <a class="nav-link" href="./publisher.html">Izdavači knjiga</a>
                         </li>
                         </ul>
                     <div class="d-flex">
-                        <input class="form-control me-2" type="search" id="search">
+                        <input class="form-control me-2" type="search" id="search" placeholder="Naziv knjige" style="background-color: rgba(0, 0, 0, 0.5)">
                         <button class="btn btn-outline-success" type="button" id="search-btn">
                             <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -43,8 +64,9 @@
         </nav>
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./book.html">Početna</a></li>
-              <li class="breadcrumb-item active" aria-current="page">
+              <li class="breadcrumb-item"><a href="./book.html" style="color: blue">Početna</a></li>
+                <li class="breadcrumb-item"><a href="./publisher.html" style="color: blue" >Izdavači</a></li>
+              <li class="breadcrumb-item active" aria-current="page" style="color: blue" >
                 Dodaj knjigu
             </li>
             </ol>
@@ -53,16 +75,20 @@
         <div>
                 <div class="mb-3">
                   <label for="title" class="form-label">Naslov</label>
-                  <input type="text" class="form-control" id="title">
+                  <input type="text" class="form-control" id="title" style="background-color: rgba(0, 0, 0, 0.6)">
                 </div>
                 <div class="mb-3">
                     <label for="genre" class="form-label">Žanr</label>
-                    <input type="text" class="form-control" id="genre">
+                    <input type="text" class="form-control" id="genre" style="background-color: rgba(0, 0, 0, 0.6)">
                   </div>
                   <div class="mb-3">
                     <label for="isbn" class="form-label">ISBN</label>
-                    <input type="text" class="form-control" id="isbn">
+                    <input type="text" class="form-control" id="isbn" style="background-color: rgba(0, 0, 0, 0.6)">
                   </div>
+            <div class="mb-3">
+                <label for="publisher" class="form-label">Lista izdavača</label>
+                <select class="form-select" id="publisher" style="background-color: rgba(0, 0, 0, 0.6)"></select>
+            </div>
                   <button type="submit" class="btn btn-success" id="save">
                     <i class="fa-solid fa-floppy-disk" ></i> Sačuvaj
                 </button>
