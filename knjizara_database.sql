@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `knjizara_database` /*!40100 DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `knjizara_database`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: knjizara_database
@@ -16,7 +18,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `book`
+-- Table structure for table `tabela`
 --
 
 DROP TABLE IF EXISTS `book`;
@@ -37,7 +39,7 @@ CREATE TABLE `book` (
   KEY `fk_book_genre_idx` (`genre_id`),
   CONSTRAINT `fk_book_genre` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`genre_id`),
   CONSTRAINT `fk_book_publisher` FOREIGN KEY (`publisher_id`) REFERENCES `publisher` (`publisher_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +48,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,'Šaptač','Donato Karizi',1,'2024-09-16 11:45:04',NULL,NULL,1),(2,'Čovek po imenu Uve','Frederik Bakman',3,'2024-09-16 11:45:48',NULL,NULL,2);
+INSERT INTO `book` VALUES (1,'Šaptač','Donato Karizi',1,'2024-09-16 11:45:04',NULL,NULL,1),(2,'Čovek po imenu Uve','Frederik Bakman',3,'2024-09-16 11:45:48',NULL,NULL,2),(3,'Sitnice koje život znače','Lorenco Marone',1,'2024-09-16 12:24:39',NULL,NULL,2);
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,10 +109,6 @@ LOCK TABLES `publisher` WRITE;
 INSERT INTO `publisher` VALUES (1,'Dereta','Neka adresa 1','011112233','2024-09-12 16:18:43','2024-09-14 21:01:51',NULL),(2,'Vulkan izdavaštvo','Neka adresa 2','011225566','2024-09-14 13:21:37',NULL,NULL),(3,'Laguna','Neka adresa 3','011447788','2024-09-14 13:21:37',NULL,NULL),(4,'Geopoetika','Neka adresa 4','011889977','2024-09-14 13:21:37',NULL,NULL),(5,'Čarobna knjiga','Neka adresa 5','011448899','2024-09-14 13:21:37','2024-09-14 19:44:00',NULL),(6,'Arhipelag','Neka adresa 6','011112233','2024-09-14 13:21:37',NULL,NULL),(7,'Strahor','Neka adresa7','011223344','2024-09-14 13:21:37',NULL,NULL),(8,'Ganeša klub','Neka adresa 8','011334455','2024-09-14 13:21:37',NULL,NULL),(9,'Makart','Neka adresa 9','011445566','2024-09-14 13:21:37',NULL,NULL),(10,'Kreativni centar','Neka adresa 10','011556677','2024-09-14 13:21:37',NULL,NULL),(11,'CLIO','Neka adresa 11','011667788','2024-09-14 13:21:37',NULL,NULL),(12,'Riznica lepih reči','Neka adresa 12','011778899','2024-09-14 13:21:37','2024-09-16 11:41:18',NULL),(13,'Agora','Neka adresa 16','011448899','2024-09-15 16:34:55','2024-09-15 16:35:10','2024-09-15 16:35:14'),(14,'Neka izdavačka kuća','Neka adresa 14','011778899','2024-09-15 18:44:04',NULL,'2024-09-16 11:41:04');
 /*!40000 ALTER TABLE `publisher` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'knjizara_database'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -121,4 +119,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-16 11:50:10
+-- Dump completed on 2024-09-16 12:46:03
