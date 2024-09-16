@@ -3,17 +3,17 @@ package rs.ac.singidunum.knjizara_ispit.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import rs.ac.singidunum.knjizara_ispit.entity.Author;
+import rs.ac.singidunum.knjizara_ispit.entity.Genre;
 
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AuthorRepository extends JpaRepository<Author, Integer> {
+public interface GenreRepository extends JpaRepository<Genre, Integer> {
 
 
-    List<Author> findAllByDeletedAtIsNull();
+    List<Genre> findAllByDeletedAtIsNull();
 
-    Optional<Author> findByIdAndDeletedAtIsNull(Integer id);
+    Optional<Genre> findByIdAndDeletedAtIsNull(Integer id);
 }

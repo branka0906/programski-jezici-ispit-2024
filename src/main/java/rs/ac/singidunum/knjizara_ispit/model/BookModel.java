@@ -12,7 +12,7 @@ import lombok.Setter;
 public class BookModel {
 
     private String title;
-    private String genre;
-    private String isbn;
+    private String author;
     private Integer publisherId;
+    private Integer genreId;
 }

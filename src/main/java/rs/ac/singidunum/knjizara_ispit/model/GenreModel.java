@@ -7,8 +7,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class AuthorModel {
+public class GenreModel {
     private String name;
-    private String surname;
+
 
 }

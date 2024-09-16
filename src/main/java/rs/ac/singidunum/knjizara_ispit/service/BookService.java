@@ -3,6 +3,7 @@ package rs.ac.singidunum.knjizara_ispit.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import rs.ac.singidunum.knjizara_ispit.entity.Book;
+import rs.ac.singidunum.knjizara_ispit.entity.Genre;
 import rs.ac.singidunum.knjizara_ispit.entity.Publisher;
 import rs.ac.singidunum.knjizara_ispit.model.BookModel;
 import rs.ac.singidunum.knjizara_ispit.repository.BookRepository;
@@ -17,6 +18,7 @@ public class BookService {
 
     private final BookRepository repository;
     private final PublisherService publisherService;
+    private final GenreService genreService;
 
     public List<Book> getAllBooks (){
         return repository.findAllByDeletedAtIsNull();
@@ -32,11 +34,12 @@ public class BookService {
 
     public Book createBook(BookModel model){
         Publisher publisher = publisherService.getPublisherById(model.getPublisherId()).orElseThrow();
+        Genre genre = genreService.getGenreById(model.getGenreId()).orElseThrow();
         Book book = new Book();
         book.setTitle(model.getTitle());
-        book.setGenre(model.getGenre());
-        book.setIsbn(model.getIsbn());
+        book.setAuthor(model.getAuthor());
         book.setPublisher(publisher);
+        book.setGenre(genre);
         book.setCreatedAt(LocalDateTime.now());
         return repository.save(book);
     }
@@ -44,10 +47,11 @@ public class BookService {
     public Book updateBook(Integer id, BookModel model){
         Book book = repository.findByIdAndDeletedAtIsNull(id).orElseThrow();
         Publisher publisher = publisherService.getPublisherById(model.getPublisherId()).orElseThrow();
+        Genre genre = genreService.getGenreById(model.getPublisherId()).orElseThrow();
         book.setTitle(model.getTitle());
-        book.setGenre(model.getGenre());
-        book.setIsbn(model.getIsbn());
+        book.setAuthor(model.getAuthor());
         book.setPublisher(publisher);
+        book.setGenre(genre);
         book.setUpdatedAt(LocalDateTime.now());
         return  repository.save(book);
     }

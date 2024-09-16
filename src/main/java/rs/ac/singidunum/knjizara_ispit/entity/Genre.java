@@ -9,26 +9,19 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity(name = "author")
+@Entity(name = "genre")
 @NoArgsConstructor
 @Getter
 @Setter
 
-public class Author {
+public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "author_id")
+    @Column(name = "genre_id")
     private Integer id;
 
     @Column(nullable = false, unique = true)
     private String name;
-
-    @Column(nullable = false)
-    private String surname;
-
-    @ManyToMany(mappedBy = "authors")
-    @JsonIgnore
-    private List<Book> books;
 
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();

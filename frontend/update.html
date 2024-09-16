@@ -37,7 +37,7 @@
     <div class="container">
         <nav class="navbar  navbar-expand-lg rounded" style="background-color: rgba(0, 0, 0, 0.5)">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./book.html"><i class="fa-solid fa-sheet-plastic"></i> Knjižara</a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -46,10 +46,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="./book.html"> Početna</a>
+                            <a class="nav-link" href="./book.html"><i class="fa-solid fa-house"></i> Početna </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./publisher.html">Izdavači knjiga</a>
+                            <a class="nav-link" href="./publisher.html"> Izdavačka kuća </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./genre.html"> Žanr </a>
                         </li>
                     </ul>
                     <div class="d-flex">
@@ -63,7 +66,7 @@
         </nav>
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./book.html">Početna</a>
+              <li class="breadcrumb-item"><a href="./book.html" style="color: blue" > Početna</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page" id="breadcrumb"></li>
             </ol>
@@ -79,17 +82,17 @@
                   <input type="text" class="form-control" id="title" style="background-color: rgba(0, 0, 0, 0.6)">
                 </div>
                 <div class="mb-3">
-                  <label for="genre" class="form-label">Žanr</label>
-                  <input type="text" class="form-control" id="genre" style="background-color: rgba(0, 0, 0, 0.6)">
+                  <label for="author" class="form-label"> Autor</label>
+                  <input type="text" class="form-control" id="author" style="background-color: rgba(0, 0, 0, 0.6)">
                 </div>
-                <div class="mb-3">
-                    <label for="isbn" class="form-label">ISBN</label>
-                    <input type="text" class="form-control" id="isbn" style="background-color: rgba(0, 0, 0, 0.6)">
+               <div class="mb-3">
+                      <label for="publisher" class="form-label">Lista izdavačkih kuća</label>
+                      <select class="form-select" id="publisher" style="background-color: rgba(0, 0, 0, 0.6)"></select>
                   </div>
-                  <div class="mb-3">
-                      <label for="publisher" class="form-label">Lista izdavača</label>
-                      <select class="form-select" id="publisher"></select>
-                  </div>
+            <div class="mb-3">
+                <label for="genre" class="form-label">Žanr</label>
+                <select class="form-select" id="genre" style="background-color: rgba(0, 0, 0, 0.6)"></select>
+            </div>
                   <div class="mb-3">
                     <label for="created" class="form-label">Datum unosa</label>
                     <input type="text" class="form-control" id="created" disabled style="background-color: rgba(0, 0, 0, 0.6)">

@@ -33,7 +33,7 @@
 <div class="container">
     <nav class="navbar  navbar-expand-lg rounded" style="background-color: rgba(0, 0, 0, 0.5)">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./book.html"><i class="fa-solid fa-sheet-plastic"></i> Knjižara</a>
+            <a class="navbar-brand" href="./book.html"><i class="fa-solid fa-book"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -42,11 +42,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./book.html">
-                            <i class="fa-solid fa-house"></i> Početna</a>
+                        <a class="nav-link" href="./book.html"><i class="fa-solid fa-house"></i> Početna </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./publisher.html"> Izdavači knjiga</a>
+                        <a class="nav-link" href="./publisher.html"> Izdavačka kuća</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./genre.html"> Žanr</a>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -62,7 +64,7 @@
     <h1 class="h3">
         <span id="search-title"> Lista knjiga </span>
         <a href="do.html" class="btn btn-sm btn-success">
-            <i class="fa-solid fa-plus"></i> Dodaj knjigu </a>
+            <i class="fa-regular fa-square-plus"></i> Dodaj knjigu </a>
     </h1>
 
     <table class="table">
@@ -71,9 +73,9 @@
 
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">#</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Naslov</th>
+            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Autor</th>
+            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Izdavačka kuća</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Žanr</th>
-            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">ISBN</th>
-            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Izdavači</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Datum unosa</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Datum izmene</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Opcije</th>
@@ -87,9 +89,9 @@
     <tr>
         <th scope="row" class="id" style="background-color: rgba(0, 0, 0, 0.5)"></th>
         <td class="title" style="background-color: rgba(0, 0, 0, 0.5)"></td>
-        <td class="genre" style="background-color: rgba(0, 0, 0, 0.5)"></td>
-        <td class="isbn" style="background-color: rgba(0, 0, 0, 0.5)"></td>
+        <td class="author" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td class="publisher" style="background-color: rgba(0, 0, 0, 0.5)"></td>
+        <td class="genre" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td class="created" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td class="updated" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td>
@@ -99,7 +101,7 @@
                 </a>
 
                 <button type="button" class="btn btn-sm btn-danger remove">
-                    <i class="fa-solid fa-trash"></i> Obriši
+                    <i class="fa-solid fa-trash-can"></i> Obriši
                 </button>
             </div>
         </td>

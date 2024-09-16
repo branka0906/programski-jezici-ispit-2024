@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity(name = "book")
 @NoArgsConstructor
@@ -24,21 +23,16 @@ public class Book {
     private String title;
 
     @Column(nullable = false)
-    private String genre;
-
-    @Column(nullable = false)
-    private String isbn;
+    private String author;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "publisher_id", nullable = false)
     private Publisher publisher;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "book_author",
-               joinColumns = @JoinColumn(name = "book_id"),
-               inverseJoinColumns = @JoinColumn(name = "author_id")
-    )
-    List<Author> authors;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "genre_id", nullable = false)
+    private Genre genre;
+
 
     @Column(nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();

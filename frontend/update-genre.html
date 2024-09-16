@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
           integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <style>
         body {
         margin: 0;
@@ -21,6 +20,10 @@
         background-repeat: no-repeat;
         height: 100vh;
         color: white;
+        }
+
+        .navbar {
+        background-color: rgba(0, 0, 0, 0.9);
         }
 
         .container {
@@ -43,19 +46,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="./book.html">
-                            <i class="fa-solid fa-house"></i> Početna </a>
+                        <a class="nav-link" href="./book.html"><i class="fa-solid fa-house"></i> Početna </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./publisher.html"> Izdavačka kuća </a>
+                        <a class="nav-link" href="./publisher.html"> Izdavačke kuće </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./genre.html"> Žanr </a>
+                        <a class="nav-link" href="./genre.html"> Žanr</a>
                     </li>
+
                 </ul>
                 <div class="d-flex">
-                    <input class="form-control me-2" type="search" id="search" placeholder="Naziv knjige" style="background-color: rgba(0, 0, 0, 0.5)">
-                    <button class="btn btn-outline-success" type="button" id="search-btn">
+                    <input class="form-control me-2" type="search" id="search">
+                    <button class="btn btn-outline-success" type="button" id="search-btn" style="background-color: rgba(0, 0, 0, 0.5)">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
@@ -64,24 +67,30 @@
     </nav>
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="./book.html" style="color: blue">Početna</a></li>
-            <li class="breadcrumb-item active" aria-current="page" style="color: blue"> Dodaj izdavačku kuću
+            <li class="breadcrumb-item"><a href="./book.html" style="color: blue"> Početna</a>
             </li>
+            <li class="breadcrumb-item"><a href="./genre.html" style="color: blue"> Žanr</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page" id="breadcrumb"></li>
         </ol>
     </nav>
-    <h1 class="h3"> Dodaj izdavačku kuću</h1>
+    <h1 class="h3">Izmeni žanr</h1>
     <div>
         <div class="mb-3">
-            <label for="name" class="form-label">Naziv</label>
-            <input type="text" class="form-control" id="name" style="background-color: rgba(0, 0, 0, 0.5)">
+            <label for="id" class="form-label">Žanr ID</label>
+            <input type="number" class="form-control" id="id" disabled style="background-color: rgba(0, 0, 0, 0.6)">
         </div>
         <div class="mb-3">
-            <label for="address" class="form-label">Adresa</label>
-            <input type="text" class="form-control" id="address" style="background-color: rgba(0, 0, 0, 0.5)">
+            <label for="name" class="form-label">Naziv žanra</label>
+            <input type="text" class="form-control" id="name" style="background-color: rgba(0, 0, 0, 0.6)">
         </div>
         <div class="mb-3">
-            <label for="contact" class="form-label">Kontakt</label>
-            <input type="text" class="form-control" id="contact" style="background-color: rgba(0, 0, 0, 0.5)">
+            <label for="created" class="form-label">Datum unosa</label>
+            <input type="text" class="form-control" id="created" disabled style="background-color: rgba(0, 0, 0, 0.6)">
+        </div>
+        <div class="mb-3">
+            <label for="updated" class="form-label">Datum izmene</label>
+            <input type="text" class="form-control" id="updated" disabled style="background-color: rgba(0, 0, 0, 0.6)">
         </div>
         <button type="submit" class="btn btn-success" id="save">
             <i class="fa-solid fa-floppy-disk" ></i> Sačuvaj
@@ -92,7 +101,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="./js/find.js"></script>
-<script src="./js/do-publisher.js"></script>
+<script src="./js/update-genre.js"></script>
 </body>
 
 </html>

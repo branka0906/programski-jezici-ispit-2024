@@ -37,7 +37,7 @@
 <div class="container">
     <nav class="navbar  navbar-expand-lg rounded" style="background-color: rgba(0, 0, 0, 0.5)">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./book.html"><i class="fa-solid fa-sheet-plastic"></i> Knjižara</a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -46,10 +46,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link"  href="./book.html"> Početna</a>
+                        <a class="nav-link"  href="./book.html"><i class="fa-solid fa-house"></i> Početna </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./publisher.html">Izdavači knjiga</a>
+                        <a class="nav-link active" href="./publisher.html" aria-current="page"> Izdavačka kuća </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./genre.html" aria-current="page"> Žanr </a>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -61,39 +64,25 @@
             </div>
         </div>
     </nav>
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="./book.html"> Početna</a>
-            </li>
-            <li class="breadcrumb-item"><a href="#" id="knjiga"> Knjiga</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">
-                Autori
-            </li>
-        </ol>
-    </nav>
-    <h1 class="h3"> Autori knjiga </h1>
+    <h1 class="h3"> Lista žanrova <a href="do-genre.html" class="btn btn-sm btn-success">
+        <i class="fa-regular fa-square-plus"></i> Dodaj žanr </a></h1>
     <table class="table">
         <thead>
         <tr>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">#</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Naziv</th>
-            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Adresa</th>
-            <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Kontakt</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Datum unosa</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Datum izmene</th>
             <th scope="col" style="background-color: rgba(0, 0, 0, 0.5)">Opcije</th>
         </tr>
         </thead>
-        <tbody id="publisher-table"></tbody>
+        <tbody id="genre-table"></tbody>
     </table>
 </div>
-<template id="publisher">
+<template id="genre">
     <tr>
         <th scope="row" class="id" style="background-color: rgba(0, 0, 0, 0.5)"></th>
         <td class="name" style="background-color: rgba(0, 0, 0, 0.5)"></td>
-        <td class="address" style="background-color: rgba(0, 0, 0, 0.5)"></td>
-        <td class="contact" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td class="created" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td class="updated" style="background-color: rgba(0, 0, 0, 0.5)"></td>
         <td>
@@ -116,7 +105,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="./js/find.js"></script>
-<script src="./js/author.js"></script>
+<script src="./js/genre.js"></script>
 </body>
 
 </html>
